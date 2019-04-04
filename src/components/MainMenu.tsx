@@ -2,6 +2,10 @@ import * as React from 'react';
 import MenuItem from './MenuItem';
 
 class MainMenu extends React.Component {
+    constructor(props: Readonly<{}>) {
+        super(props);
+    }
+
     public render() {
         return (
             <nav className="main-nav">

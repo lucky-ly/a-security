@@ -4,6 +4,10 @@ import Logo from './Logo';
 import MainMenu from './MainMenu';
 
 class Sidebar extends React.Component {
+    constructor(props: Readonly<{}>) {
+        super(props);        
+    }
+
     public render() {
         return (
             <div className="sidebar open">

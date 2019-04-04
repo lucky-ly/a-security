@@ -1,6 +1,10 @@
 import * as React from 'react';
 
 class ContentContainer extends React.Component {
+    constructor(props: Readonly<{}>) {
+        super(props);
+    }
+
     public render() {
         return (
             <div className="ContentContainer">

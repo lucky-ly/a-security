@@ -4,7 +4,11 @@ import ContentContainer from './components/ContentContainer';
 import Sidebar from './components/Sidebar';
 
 class App extends React.Component {
-  public render() {
+  constructor(props: Readonly<{}>) {
+    super(props);
+  }
+
+    public render() {
     return (
       <div>
         <Sidebar/>
