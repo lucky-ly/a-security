@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import "./Sidebar.css";
+
 import Logo from './Logo';
 import MainMenu from './MainMenu';
 
