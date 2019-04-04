@@ -2,8 +2,8 @@ import * as React from 'react';
 
 import "./Sidebar.css";
 
-import Logo from './Logo';
-import MainMenu from './MainMenu';
+import Logo from '../Logo';
+import MainMenu from '../MainMenu/MainMenu';
 
 class Sidebar extends React.Component<Readonly<{}>, ISidebarState> {
     constructor(props: Readonly<{}>) {
