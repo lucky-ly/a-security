@@ -1,14 +1,14 @@
 import * as React from 'react';
 import logo from '../assets/logo.svg';
 
-class Logo extends React.Component {
-    public render() {
-        return (
-            <div className="logo">
+function Logo() {
+    return (
+        <div className="logo">
+            <a href="/">
                 <img src={logo} alt="logo" />
-            </div>
-        );
-    }
+            </a>
+        </div>
+    );
 }
 
 export default Logo;
