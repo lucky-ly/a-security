@@ -1,4 +1,5 @@
 import * as React from 'react';
+import MenuItem from './MenuItem';
 
 class MainMenu extends React.Component {
     public render() {
@@ -6,22 +7,22 @@ class MainMenu extends React.Component {
             <nav className="main-nav">
                 <div className="nav-subheader">Услуги</div>
                 <ul>
-                    <li className="nav-item"><a href="#">Охрана квартир</a></li>
-                    <li className="nav-item"><a href="#">Охрана домов</a></li>
-                    <li className="nav-item"><a href="#">Охрана бизнеса</a></li>
-                    <li className="nav-item"><a href="#">Противопожарная безопасность</a></li>
-                    <li className="nav-item"><a href="#">Системы видеонаблюдения</a></li>
-                    <li className="nav-item"><a href="#">Системы контроля доступа</a></li>
-                    <li className="nav-item"><a href="#">Прочие услуги</a></li>
+                    <MenuItem Link="#" Text="Охрана квартир"/>
+                    <MenuItem Link="#" Text="Охрана домов"/>
+                    <MenuItem Link="#" Text="Охрана бизнеса"/>
+                    <MenuItem Link="#" Text="Противопожарная безопасность"/>
+                    <MenuItem Link="#" Text="Системы видеонаблюдения"/>
+                    <MenuItem Link="#" Text="Системы контроля доступа"/>
+                    <MenuItem Link="#" Text="Прочие услуги"/>
                 </ul>
                 <footer>
                     <ul>
-                        <li className="nav-item"><a href="#">О компании</a></li>
-                        <li className="nav-item"><a href="#">Партнёрам</a></li>
-                        <li className="nav-item"><a href="#">Вакансии</a></li>
-                        <li className="nav-item"><a href="#">Помощь</a></li>
-                        <li className="nav-item"><a href="#">Отзывы</a></li>
-                        <li className="nav-item"><a href="#">Контакты</a></li>
+                        <MenuItem Link="#" Text="О компании"/>
+                        <MenuItem Link="#" Text="Партнёрам"/>
+                        <MenuItem Link="#" Text="Вакансии"/>
+                        <MenuItem Link="#" Text="Помощь"/>
+                        <MenuItem Link="#" Text="Отзывы"/>
+                        <MenuItem Link="#" Text="Контакты"/>
                     </ul>
                 </footer>
             </nav>
