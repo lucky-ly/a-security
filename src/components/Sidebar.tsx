@@ -18,11 +18,16 @@ class Sidebar extends React.Component<Readonly<{}>, ISidebarState> {
     public render() {
         return (
             <div className={this.state.IsOpen ? "sidebar open" : "sidebar"}>
+                <div className="sidebar-toggle" onClick={this.ToggleOpen}>
+                    <div className="toggle-button">
+                        <div className="bar top"/>
+                        <div className="bar bottom"/>
+                    </div>
+                </div>
                 <div className="sidebar-content">
                     <Logo/>
                     <MainMenu/>
                 </div>
-                <div className="sidebar-toggle"><i id="sidebar-toggle-button" className="fas fa-equals"/></div>
             </div>
         );
     }
