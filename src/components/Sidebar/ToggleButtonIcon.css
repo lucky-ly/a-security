@@ -1,0 +1,15 @@
+.toggle-button__bar {
+    background-color: #000000;
+    width: 24px;
+    height: 2px;
+    margin: 10px auto;
+    transition: all .5s ease;
+}
+
+.toggle-button__bar-top_open {
+    transform: translateY(6px) rotateZ(45deg)
+}
+
+.toggle-button__bar-bottom_open {
+    transform: translateY(-6px) rotateZ(-45deg)
+}

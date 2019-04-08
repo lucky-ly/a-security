@@ -1,3 +1,0 @@
-interface ISidebarState {
-    IsOpen: boolean
-}

@@ -13,10 +13,10 @@ class App extends React.Component {
 
     public render() {
     return (
-      <div>
+      <React.Fragment>
         <Sidebar/>
         <ContentContainer/>
-      </div>
+      </React.Fragment>
     );
   }
 }

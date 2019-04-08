@@ -1,29 +1,60 @@
-.sidebar {
-    width: 80px;
-    height: 100%;
-    border-right: 1px solid #000;
+.sidebar-backdrop {
+    display: none;
+    z-index: 2;
     position: fixed;
-    background: #ffffff;
-}
-
-.sidebar.open {
-    width: 520px;
-    padding-left: 80px;
-}
-
-.sidebar-toggle {
-    width: 80px;
-    height: 100%;
-    position: fixed;
+    top: 0;
     left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
-.sidebar .toggle-button {
-    vertical-align: center;
+.sidebar-backdrop_open {
+    display: block;
 }
 
-.sidebar .toggle-button .bar {
-    background-color: #000000;
-    width: 24px;
-    height: 2px;
+/* Wrapper that groups the logo and the rest of the sidebar. */
+.sidebar {
+    z-index: 3; /* Sidebar is above the backdrop when both are visible. */
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+/*
+Logo doesn't move with the rest of the sidebar.
+`position: absolute` prevents pushing the white background of the movable part down.
+*/
+.sidebar__logo {
+    position: absolute;
+}
+
+/* Changing `margin-left` to 0 and back toggles the menu. */
+.sidebar__movable {
+    transition: all .5s ease;
+    background-color: white;
+    height: 100%;
+    width: 520px;
+    margin-left: -440px;
+    display: flex;
+}
+
+.sidebar__movable_open {
+    margin-left: 0;
+}
+
+.sidebar__content {
+    flex: 1
+}
+
+.sidebar__toggle-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px; /* Should match `margin-left` when closing the menu. */
+    /*
+    TODO: warning: no `flex: 1`, this block should only stretch vertically,
+    which should be done in `.sidebar__movable` for both children.
+    */
 }
