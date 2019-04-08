@@ -8,9 +8,9 @@ class MainMenu extends React.Component {
 
     public render() {
         return (
-            <nav className="sidebar__content">
-                <div className="sidebar__item">Услуги</div>
-                <ul>
+            <React.Fragment>
+                <div className="main-menu__item">Услуги</div>
+                <nav>
                     <MenuItem link="#" text="Охрана квартир"/>
                     <MenuItem link="#" text="Охрана домов"/>
                     <MenuItem link="#" text="Охрана бизнеса"/>
@@ -18,18 +18,16 @@ class MainMenu extends React.Component {
                     <MenuItem link="#" text="Системы видеонаблюдения"/>
                     <MenuItem link="#" text="Системы контроля доступа"/>
                     <MenuItem link="#" text="Прочие услуги"/>
-                </ul>
+                </nav>
                 <footer>
-                    <ul>
-                        <MenuItem link="#" text="О компании"/>
-                        <MenuItem link="#" text="Партнёрам"/>
-                        <MenuItem link="#" text="Вакансии"/>
-                        <MenuItem link="#" text="Помощь"/>
-                        <MenuItem link="#" text="Отзывы"/>
-                        <MenuItem link="#" text="Контакты"/>
-                    </ul>
+                    <MenuItem link="#" text="О компании"/>
+                    <MenuItem link="#" text="Партнёрам"/>
+                    <MenuItem link="#" text="Вакансии"/>
+                    <MenuItem link="#" text="Помощь"/>
+                    <MenuItem link="#" text="Отзывы"/>
+                    <MenuItem link="#" text="Контакты"/>
                 </footer>
-            </nav>
+            </React.Fragment>
         );
     }
 }

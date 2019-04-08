@@ -48,6 +48,7 @@ Logo doesn't move with the rest of the sidebar.
 }
 
 .sidebar__content {
+    padding-left: 80px;
     flex: 1
 }
 
