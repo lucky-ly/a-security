@@ -28,6 +28,9 @@ Logo doesn't move with the rest of the sidebar.
 */
 .sidebar__logo {
     position: absolute;
+    width: 80px;
+    text-align: center;
+    padding-top: 24px;
 }
 
 /* Changing `margin-left` to 0 and back toggles the menu. */
