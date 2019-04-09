@@ -56,6 +56,7 @@ Logo doesn't move with the rest of the sidebar.
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     width: 80px; /* Should match `margin-left` when closing the menu. */
     /*
     TODO: warning: no `flex: 1`, this block should only stretch vertically,

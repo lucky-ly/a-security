@@ -20,14 +20,14 @@ class Sidebar extends React.Component<Readonly<{}>, ISidebarState> {
     public render() {
         return (
             <React.Fragment>
-                <div className={this.switchOpenClass("sidebar-backdrop")}/>
+                <div className={this.switchOpenClass("sidebar-backdrop")} onClick={this.sidebarClose}/>
 
                 <div className="sidebar">
                     <div className="sidebar__logo">
                         <Logo/>
                     </div>
 
-                    <div className={this.switchOpenClass("sidebar__movable")}>
+                    <div className={this.switchOpenClass("sidebar__movable")} onMouseEnter={this.sidebarOpen} onMouseLeave={this.sidebarClose}>
                         <div className="sidebar__content">
                             <MainMenu/>
                             {/* <FooterMenu/> */}
@@ -44,11 +44,18 @@ class Sidebar extends React.Component<Readonly<{}>, ISidebarState> {
     }
 
     private toggleOpen() {
-        const newState: ISidebarState = {
-            isOpen: !this.state.isOpen
+        if (this.state.isOpen) {
+            this.sidebarClose();
         }
-        this.setState(newState)
+        else
+        {
+            this.sidebarOpen();
+        }
     }
+
+    private sidebarOpen = () => this.setState({ isOpen: true });
+
+    private sidebarClose = () => this.setState({ isOpen: false });
 
     private switchOpenClass(className: string): string {
         return this.state.isOpen ? `${className} ${className}_open` : className;
