@@ -1,3 +1,14 @@
-.main-menu__item {
-    /* TODO: reset `a` colors and hover behavior here. Add margins for aesthetics. */
+.main-menu__subheader {
+    color: #808080;
+    font-family: 'FuturaPT-Book', 'FuturaPT', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 28px;
+    margin-bottom: 12px;
 }
+
+.main-menu__footer {
+    display: flex;
+    flex-wrap: wrap;
+}
+

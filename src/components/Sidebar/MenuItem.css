@@ -1,0 +1,23 @@
+.main-menu__item {
+    color: #000000;
+    font-family: 'FuturaPT-Book', 'FuturaPT', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 34px;
+    text-align: left;
+
+    margin: 12px 0;
+}
+
+footer .main-menu__item {
+    flex-basis: 33%;
+}
+
+.main-menu__item a:active,
+.main-menu__item a:hover,
+.main-menu__item a:visited,
+.main-menu__item a:link
+{
+    color: #000000;
+    text-decoration: none;
+}

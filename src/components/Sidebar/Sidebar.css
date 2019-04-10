@@ -33,7 +33,6 @@ Logo doesn't move with the rest of the sidebar.
     padding-top: 24px;
 }
 
-/* Changing `margin-left` to 0 and back toggles the menu. */
 .sidebar__movable {
     transition: all .5s ease;
     background-color: white;
@@ -49,6 +48,10 @@ Logo doesn't move with the rest of the sidebar.
 
 .sidebar__content {
     padding-left: 80px;
+    padding-top: 120px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 100%;
     flex: 1
 }
 
