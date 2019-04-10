@@ -4,6 +4,7 @@ import 'normalize.css';
 import './App.css';
 
 import ContentContainer from './components/ContentContainer';
+import MainMenu from './components/Sidebar/MainMenu';
 import Sidebar from './components/Sidebar/Sidebar';
 
 class App extends React.Component {
@@ -14,7 +15,9 @@ class App extends React.Component {
     public render() {
     return (
       <React.Fragment>
-        <Sidebar/>
+        <Sidebar>
+          <MainMenu/>
+        </Sidebar>
         <ContentContainer/>
       </React.Fragment>
     );

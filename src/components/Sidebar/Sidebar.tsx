@@ -2,17 +2,20 @@ import * as React from 'react';
 
 import "./Sidebar.css";
 
+import ISidebarProps from 'src/data-types/ISidebarProps';
 import ISidebarState from 'src/data-types/ISidebarState';
 import Logo from './Logo';
-import MainMenu from './MainMenu';
 import ToggleButtonIcon from './ToggleButtonIcon';
 
-class Sidebar extends React.Component<Readonly<{}>, ISidebarState> {
-    constructor(props: Readonly<{}>) {
+class Sidebar extends React.Component<ISidebarProps, ISidebarState> {
+    private content: any;
+
+    constructor(props: ISidebarProps) {
         super(props);
         this.state = {
             isOpen: true
-        }
+        };
+        this.content = props.children; 
 
         this.toggleOpen = this.toggleOpen.bind(this);
     }
@@ -29,8 +32,7 @@ class Sidebar extends React.Component<Readonly<{}>, ISidebarState> {
 
                     <div className={this.switchOpenClass("sidebar__movable")} onMouseEnter={this.sidebarOpen} onMouseLeave={this.sidebarClose}>
                         <div className="sidebar__content">
-                            <MainMenu/>
-                            {/* <FooterMenu/> */}
+                            {this.content}
                         </div>
                         <div className="sidebar__toggle-button" onClick={this.toggleOpen}>
                             <div className="toggle-button__icon">
