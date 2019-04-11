@@ -1,6 +1,7 @@
 import * as React from 'react';
 import IMainMenuState from 'src/data-types/IMainMenuState';
 import IMenuItem from 'src/data-types/IMenuItem';
+import MenuItemTypeEnum from 'src/data-types/MenuItemTypeEnum';
 import MenuItem from './MenuItem';
 
 import './MainMenu.css'
@@ -20,12 +21,12 @@ class MainMenu extends React.Component<Readonly<{}>, IMainMenuState> {
         ];
 
         const footerItems: IMenuItem[] = [
-            { link: "#", text: "О компании" },
-            { link: "#", text: "Партнёрам" },
-            { link: "#", text: "Вакансии" },
-            { link: "#", text: "Помощь" },
-            { link: "#", text: "Отзывы" },
-            { link: "#", text: "Контакты" },
+            { link: "#", text: "О компании", itemType: MenuItemTypeEnum.Footer },
+            { link: "#", text: "Партнёрам", itemType: MenuItemTypeEnum.Footer },
+            { link: "#", text: "Вакансии", itemType: MenuItemTypeEnum.Footer },
+            { link: "#", text: "Помощь", itemType: MenuItemTypeEnum.Footer },
+            { link: "#", text: "Отзывы", itemType: MenuItemTypeEnum.Footer },
+            { link: "#", text: "Контакты", itemType: MenuItemTypeEnum.Footer },
         ];
 
         this.state = {
@@ -48,7 +49,7 @@ class MainMenu extends React.Component<Readonly<{}>, IMainMenuState> {
         );
     }
 
-    private renderItems = (items: IMenuItem[]) => items.map((item, index) => <MenuItem key={index} link={item.link} text={item.text} />);
+    private renderItems = (items: IMenuItem[]) => items.map((item, index) => <MenuItem key={index} link={item.link} text={item.text} itemType={item.itemType} />);
     private renderMenuItems = () => this.renderItems(this.state.menuItems);
     private renderFooterItems = () => this.renderItems(this.state.footerItems);
 }

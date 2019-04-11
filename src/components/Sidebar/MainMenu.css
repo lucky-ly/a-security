@@ -7,8 +7,24 @@
     margin-bottom: 12px;
 }
 
+.main-menu__menu {
+    color: #000000;
+    font-family: 'FuturaPT-Book', 'FuturaPT', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 34px;
+}
+
 .main-menu__footer {
     display: flex;
     flex-wrap: wrap;
+
+    margin-top: 24px;
+
+    color: #808080;
+    font-family: 'FuturaPT-Book', 'FuturaPT', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 28px;
 }
 
