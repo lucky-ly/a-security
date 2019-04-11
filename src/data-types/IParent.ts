@@ -1,3 +1,3 @@
 export default interface IParent {
-    children?: any;
+    children?: React.ReactNode;
 }
