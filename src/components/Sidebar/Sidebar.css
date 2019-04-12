@@ -34,7 +34,7 @@ Logo doesn't move with the rest of the sidebar.
 }
 
 .sidebar__movable {
-    transition: all .5s ease;
+    transition: all .8s ease;
     background-color: white;
     height: 100%;
     width: 520px;

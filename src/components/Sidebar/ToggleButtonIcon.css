@@ -3,7 +3,7 @@
     width: 24px;
     height: 2px;
     margin: 12px auto;
-    transition: all .5s ease;
+    transition: all .8s ease;
 }
 
 .toggle-button__bar-top_open {
