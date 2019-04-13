@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { CSSTransition } from 'react-transition-group';
 
 import "./Sidebar.css";
 
@@ -9,6 +10,7 @@ import ToggleButtonIcon from './ToggleButtonIcon';
 
 class Sidebar extends React.Component<ISidebarProps, ISidebarState> {
     private content: any;
+    private timeoutMs: number;
 
     constructor(props: ISidebarProps) {
         super(props);
@@ -16,14 +18,16 @@ class Sidebar extends React.Component<ISidebarProps, ISidebarState> {
             isOpen: false,
         };
         this.content = props.children; 
-
+        this.timeoutMs = 800;
         this.toggleOpen = this.toggleOpen.bind(this);
     }
 
     public render() {
         return (
             <React.Fragment>
-                <div className={this.switchOpenClass("sidebar-backdrop")} onClick={this.sidebarClose}/>
+                <CSSTransition in={this.state.isOpen} timeout={this.timeoutMs} classNames="sidebar-backdrop" unmountOnExit={true} mountOnEnter={true}>
+                    <div className="sidebar-backdrop" onClick={this.sidebarClose}/>
+                </CSSTransition>
 
                 <div className="sidebar">
                     <div className="sidebar__logo">
