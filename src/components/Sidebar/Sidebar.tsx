@@ -13,7 +13,7 @@ class Sidebar extends React.Component<ISidebarProps, ISidebarState> {
     constructor(props: ISidebarProps) {
         super(props);
         this.state = {
-            isOpen: true
+            isOpen: false,
         };
         this.content = props.children; 
 
