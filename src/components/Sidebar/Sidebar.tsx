@@ -17,9 +17,8 @@ class Sidebar extends React.Component<ISidebarProps, ISidebarState> {
         this.state = {
             isOpen: false,
         };
-        this.content = props.children; 
+        this.content = props.children;
         this.timeoutMs = 800;
-        this.toggleOpen = this.toggleOpen.bind(this);
     }
 
     public render() {
@@ -49,7 +48,7 @@ class Sidebar extends React.Component<ISidebarProps, ISidebarState> {
         );
     }
 
-    private toggleOpen() {
+    private toggleOpen = () => {
         if (this.state.isOpen) {
             this.sidebarClose();
         }
@@ -60,12 +59,10 @@ class Sidebar extends React.Component<ISidebarProps, ISidebarState> {
     }
 
     private sidebarOpen = () => this.setState({ isOpen: true });
-
     private sidebarClose = () => this.setState({ isOpen: false });
 
-    private switchOpenClass(className: string): string {
-        return this.state.isOpen ? `${className} ${className}_open` : className;
-    }
+    private switchOpenClass = (className: string): string =>
+        this.state.isOpen ? `${className} ${className}_open` : className;
 }
 
 export default Sidebar;
