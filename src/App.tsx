@@ -3,7 +3,7 @@ import * as React from 'react';
 import 'normalize.css';
 import './App.css';
 
-import ContentContainer from './components/ContentContainer';
+import Content from './components/Content/Content';
 import MainMenu from './components/Sidebar/MainMenu';
 import Sidebar from './components/Sidebar/Sidebar';
 
@@ -18,7 +18,7 @@ class App extends React.Component {
         <Sidebar>
           <MainMenu/>
         </Sidebar>
-        <ContentContainer/>
+        <Content/>
       </React.Fragment>
     );
   }
