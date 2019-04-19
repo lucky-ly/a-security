@@ -33,7 +33,8 @@ class Sidebar extends React.Component<ISidebarProps, ISidebarState> {
                         <Logo title="На главную"/>
                     </div>
 
-                    <div className={this.switchOpenClass("sidebar__movable")} onMouseEnter={this.sidebarOpen} onMouseLeave={this.sidebarClose}>
+                    {/* <div className={this.switchOpenClass("sidebar__movable")} onMouseEnter={this.sidebarOpen} onMouseLeave={this.sidebarClose}> */}
+                    <div className={this.switchOpenClass("sidebar__movable")} onMouseEnter={this.sidebarOpen}>
                         <div className="sidebar__content">
                             {this.content}
                         </div>

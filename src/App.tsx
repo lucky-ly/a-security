@@ -4,8 +4,7 @@ import 'normalize.css';
 import './App.css';
 
 import Content from './components/Content/Content';
-import MainMenu from './components/Sidebar/MainMenu';
-import Sidebar from './components/Sidebar/Sidebar';
+import { MainMenu, Sidebar } from "./components/Sidebar";
 
 class App extends React.Component {
   constructor(props: Readonly<{}>) {

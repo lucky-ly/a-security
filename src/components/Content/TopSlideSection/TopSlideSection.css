@@ -1,0 +1,25 @@
+.top-slide-section {
+    height: 100vh;
+    background-size: contain;
+    color: #ffffff;
+}
+
+.top-slide-section__number {
+
+}
+
+.top-slide-section__title {
+
+}
+
+.top-slide-section__subtitle {
+    opacity: .7;
+}
+
+.top-slide-section__action-button {
+
+}
+
+.top-slide-section__description-button {
+
+}

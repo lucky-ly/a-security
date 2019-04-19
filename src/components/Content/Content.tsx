@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import './Content.css';
+import TopSlideSectionContainer from './TopSlideSection/TopSlideSectionContainer';
 
 class Content extends React.Component {
     constructor(props: Readonly<{}>) {
@@ -10,6 +11,8 @@ class Content extends React.Component {
     public render() {
         return (
             <div className="content-root">
+                <TopSlideSectionContainer/>
+
                 <div id="lipsum">
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas placerat ex nec felis congue tempor. Vivamus porta consequat lectus at vehicula. Nullam pulvinar, leo facilisis volutpat posuere, felis quam lacinia lacus, sed varius odio dui non quam. Phasellus interdum dui vitae massa posuere, et porta metus faucibus. Phasellus at nunc diam. Sed pretium orci tellus, in rhoncus nulla sodales id. Ut tristique viverra neque, non elementum mi. Proin finibus lacus ipsum, vitae tempus mi congue ac. Nam sem velit, posuere non volutpat at, tempus vitae ipsum. Ut elementum iaculis consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor nunc et laoreet lobortis.
