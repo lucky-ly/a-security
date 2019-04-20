@@ -1,6 +1,8 @@
 import IDataProvider from './IDataProvider';
 
-import dummyBackground from "../assets/rand-bg-1080.jpg";
+import slideImage1 from "../assets/images/photo/top-slide-1.jpg";
+import slideImage2preview from "../assets/images/photo/top-slide-2-preview.jpg";
+import slideImage2 from "../assets/images/photo/top-slide-2.jpg";
 
 import ISlideShow from 'src/data-types/Slideshow/ISlideShow';
 import ITopSlideData from '../data-types/Slideshow/ITopSlideData';
@@ -14,13 +16,31 @@ export default class TopSlideDataProvider implements IDataProvider<ISlideShow<IT
                 {
                     actionText: 'Оставить заявку',
                     actionUrl: '#/hello-world',
-                    backgroundFallbackColor: '#282844',
-                    backgroundUrl: dummyBackground,
+                    backgroundUrl: slideImage1,
                     descriptionText: 'Подробнее',
                     descriptionUrl: '#/hello-description',
                     number: 1,
-                    subtitle: 'Заголовок 2 lvl.',
-                    title: 'Заголовок 1 lvl.',
+                    subtitle: [
+                        'Охранная сигнализация',
+                        'Тревожная кнопка',
+                        'Охрана офиса, магазина, ресторана',
+                    ],
+                    title: 'Дистанционная охрана бизнеса',
+                },
+                {
+                    actionText: 'Оставить заявку',
+                    actionUrl: '#/hello-world',
+                    backgroundUrl: slideImage2,
+                    descriptionText: 'Подробнее',
+                    descriptionUrl: '#/hello-description',
+                    number: 2,
+                    previewUrl: slideImage2preview,
+                    subtitle: [
+                        'Охранная сигнализация',
+                        'Тревожная кнопка',
+                        'Комплексная защита',
+                    ],
+                    title: 'Дистанционная охрана квартир',
                 }
             ],
         };

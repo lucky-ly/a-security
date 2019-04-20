@@ -1,11 +1,20 @@
 .top-slide-section {
     height: 100vh;
     color: #ffffff;
-    font-family: 'FuturaPT', Arial, Helvetica, sans-serif;
 }
 
 .top-slide-section__contacts-widget {
     position: absolute;
     top: 0;
     right: 0;
+}
+
+.top-slide-section__switcher-widget {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.top-slide-section__slide-switcher {
+    
 }

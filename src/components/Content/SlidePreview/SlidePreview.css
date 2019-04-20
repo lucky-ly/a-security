@@ -1,0 +1,43 @@
+.slide-preview {
+    width: 720px;
+    height: 264px;
+
+    padding: 48px 0 48px 64px;
+    background: #302F41;
+
+    display: flex;
+    box-sizing: border-box;
+
+    font-family: 'FuturaPT-Bold', Arial, Helvetica, sans-serif;
+}
+
+.slide-preview__header {
+    flex: 1;
+    padding-right: 64px; 
+    box-sizing: border-box;
+}
+
+.slide-preview__number {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 26px;
+}
+
+.slide-preview__title {
+    margin-top: 48px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 34px;
+}
+
+.slide-preview__image {
+    width: 360px;
+    height: 168px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.slide-preview__image img {
+    height: 100%;
+    width: 100%;
+}
