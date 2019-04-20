@@ -6,6 +6,8 @@ import IParent from 'src/data-types/IParent';
 import ISlideShow from 'src/data-types/Slideshow/ISlideShow';
 import ITopSlideData from 'src/data-types/Slideshow/ITopSlideData';
 import ContactsWidget from '../ContactsWidget/ContactsWidget';
+import Slide from '../Slide';
+import SlideButton, { SlideButtonType } from '../SlideButton';
 
 export interface IProps extends IParent {
     slideShowData: ISlideShow<ITopSlideData>
@@ -21,23 +23,16 @@ export default class TopSlideSection extends React.Component<IProps, ISlideShow<
     public render() {
         const currentSlide = this.state.slides[this.state.currentSlide];
 
-        const styles: React.CSSProperties = {
-            backgroundColor: currentSlide.backgroundFallbackColor,
-            backgroundImage: `url(${currentSlide.backgroundUrl})`
-        };
-
         return (
-            <div className="top-slide-section" style={styles}>
+            <section className="top-slide-section">
                 <div className="top-slide-section__contacts-widget">
                     <ContactsWidget phoneNumber="+7 (343) 344-60-60" callBackUrl="#/requestcallback" placeOrderUrl="#/placeorder"/>
                 </div>
-
-                <div className="top-slide-section__number">{currentSlide.number.toString().padStart(2,'0')+'.'}</div>
-                <h1 className="top-slide-section__title">{currentSlide.title}</h1>
-                <h2 className="top-slide-section__subtitle">{currentSlide.subtitle}</h2>
-                <a className="top-slide-section__action-button" href={currentSlide.actionUrl}>{currentSlide.actionText}</a>
-                <a className="top-slide-section__description-button" href={currentSlide.descriptionUrl}>{currentSlide.descriptionText}</a>
-            </div>
+                <Slide data={currentSlide}>
+                    <SlideButton type={SlideButtonType.Action} url={currentSlide.actionUrl} text={currentSlide.actionText}/>
+                    <SlideButton type={SlideButtonType.Description} url={currentSlide.descriptionUrl} text={currentSlide.descriptionText}/>
+                </Slide>
+            </section>
         );
     }
 }

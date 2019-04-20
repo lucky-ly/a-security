@@ -1,31 +1,11 @@
 .top-slide-section {
     height: 100vh;
-    background-size: contain;
     color: #ffffff;
+    font-family: 'FuturaPT', Arial, Helvetica, sans-serif;
 }
 
 .top-slide-section__contacts-widget {
     position: absolute;
     top: 0;
     right: 0;
-}
-
-.top-slide-section__number {
-
-}
-
-.top-slide-section__title {
-
-}
-
-.top-slide-section__subtitle {
-    opacity: .7;
-}
-
-.top-slide-section__action-button {
-
-}
-
-.top-slide-section__description-button {
-
 }
