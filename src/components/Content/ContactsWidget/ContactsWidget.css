@@ -1,0 +1,42 @@
+.contacts-widget__phone-number {
+    float: left;
+    height: 80px;
+    line-height: 80px;
+}
+
+.contacts-widget__slider {
+    float: left;
+    height: 80px;
+    width: 80px;
+    line-height: 80px;
+    vertical-align: bottom;
+    text-align: left;
+}
+
+.slider__icon {
+    width: 80px;
+    text-align: center;
+}
+
+.slider__text {
+    transform: rotate(90deg);
+    transform-origin: left top;
+}
+
+.contacts-widget__slider a:hover,
+.contacts-widget__slider a:active,
+.contacts-widget__slider a:visited,
+.contacts-widget__slider a:link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.contacts-widget__slider_call-back .slider__icon,
+.contacts-widget__slider_call-back {
+    background: #302F41;
+}
+
+.contacts-widget__slider_place-order .slider__icon,
+.contacts-widget__slider_place-order {
+    background: #6F6AFF;
+}

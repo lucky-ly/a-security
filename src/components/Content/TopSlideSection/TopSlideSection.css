@@ -4,6 +4,12 @@
     color: #ffffff;
 }
 
+.top-slide-section__contacts-widget {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 .top-slide-section__number {
 
 }
