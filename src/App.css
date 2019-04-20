@@ -26,3 +26,23 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+@font-face {
+  font-family: 'FuturaPT-Bold';
+  src: url(./assets/fonts/FuturaPT-Bold.woff);
+}
+
+@font-face {
+  font-family: 'FuturaPT-Demi';
+  src: url(./assets/fonts/FuturaPT-Demi.woff);
+}
+
+@font-face {
+  font-family: 'FuturaPT-Medium';
+  src: url(./assets/fonts/FuturaPT-Medium.woff);
+}
+
+@font-face {
+  font-family: 'FuturaPT-Book';
+  src: url(./assets/fonts/FuturaPT-Book.woff);
+}
