@@ -13,8 +13,6 @@
     position: absolute;
     bottom: 0;
     right: 0;
-}
-
-.top-slide-section__slide-switcher {
-    
+    display: flex;
+    align-items: flex-end;
 }
