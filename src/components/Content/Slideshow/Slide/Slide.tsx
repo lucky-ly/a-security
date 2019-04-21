@@ -6,7 +6,7 @@ import ITopSlideData from 'src/data-types/Slideshow/ITopSlideData';
 import { isArray } from 'util';
 import { ISlideProps } from '.';
 
-export default function Slide(props: ISlideProps) {
+export function Slide(props: ISlideProps) {
     const currentSlide: ITopSlideData = props.data;
 
     const styles: React.CSSProperties = {

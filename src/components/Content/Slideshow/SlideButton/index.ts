@@ -1,3 +1,3 @@
-export { default } from "./SlideButton";
+export { SlideButton } from "./SlideButton";
 export { ISlideButtonProps } from "./ISlideButtonProps"
 export { SlideButtonType } from "./SlideButtonType"

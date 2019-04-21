@@ -2,21 +2,15 @@ import * as React from "react";
 
 import './TopSlideSection.css';
 
-import IParent from 'src/data-types/IParent';
 import ISlideShow from 'src/data-types/Slideshow/ISlideShow';
 import ITopSlideData from 'src/data-types/Slideshow/ITopSlideData';
-import ContactsWidget from '../ContactsWidget/ContactsWidget';
-import Slide from '../Slide';
-import SlideButton, { SlideButtonType } from '../SlideButton';
-import SlidePreview from '../SlidePreview';
-import SlideSwitcher from '../SlideSwitcher';
+import { ITopSlideSectionProps } from './ITopSlideSectionProps';
 
-export interface IProps extends IParent {
-    slideShowData: ISlideShow<ITopSlideData>
-}
+import { ContactsWidget } from '../ContactsWidget/ContactsWidget';
+import { Slide, SlideButton, SlideButtonType, SlidePreview, SlideSwitcher } from '../Slideshow';
 
-export default class TopSlideSection extends React.Component<IProps, ISlideShow<ITopSlideData>> {
-    constructor(props: IProps) {
+export default class TopSlideSection extends React.Component<ITopSlideSectionProps, ISlideShow<ITopSlideData>> {
+    constructor(props: ITopSlideSectionProps) {
         super(props)
 
         this.state = props.slideShowData;

@@ -2,16 +2,10 @@ import * as React from 'react';
 
 import './ContactsWidget.css';
 
-import IParent from 'src/data-types/IParent';
-import VerticalSliderButton from '../VerticalSliderButton';
+import { VerticalSliderButton } from '../VerticalSliderButton';
+import { IContactsWidgetProps } from './IContactsWidgetProps';
 
-interface IContactsWidgetProps extends IParent {
-    phoneNumber: string;
-    callBackUrl: string;
-    placeOrderUrl: string;
-}
-
-export default function ContactsWidget(props: IContactsWidgetProps) {
+export function ContactsWidget(props: IContactsWidgetProps) {
     return (
         <React.Fragment>
             <a href={`tel:${props.phoneNumber}`} className="contacts-widget__phone-number">{phoneFormatted(props.phoneNumber)}</a>

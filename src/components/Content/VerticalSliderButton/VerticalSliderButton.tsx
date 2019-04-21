@@ -9,7 +9,7 @@ export interface IProps {
     backroundColor: string;
 }
 
-export default function VerticalSliderButton (props: IProps) {
+export function VerticalSliderButton (props: IProps) {
     const style = { backgroundColor: props.backroundColor };
     return (
         <a href={props.url} className="slider" style={style}>

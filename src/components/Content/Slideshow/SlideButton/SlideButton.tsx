@@ -5,7 +5,7 @@ import './SlideButton.css';
 import { ISlideButtonProps } from '.';
 import { SlideButtonType } from './SlideButtonType';
 
-export default function SlideButton(props: ISlideButtonProps) {
+export function SlideButton(props: ISlideButtonProps) {
     switch (props.type) {
         case SlideButtonType.Action:
             return (

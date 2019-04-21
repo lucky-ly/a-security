@@ -2,13 +2,9 @@ import * as React from "react";
 
 import './SlidePreview.css';
 
-import ITopSlideData from 'src/data-types/Slideshow/ITopSlideData';
+import { ISlidePreviewProps } from './ISlidePreviewProps';
 
-export interface ISlidePreviewProps {
-    data: ITopSlideData;
-}
-
-export default class SlidePreview extends React.Component<ISlidePreviewProps, any> {
+export class SlidePreview extends React.Component<ISlidePreviewProps, any> {
 
     constructor(props: any) {
         super(props)

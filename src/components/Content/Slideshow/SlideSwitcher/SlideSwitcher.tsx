@@ -2,9 +2,9 @@ import * as React from "react";
 
 import './SlideSwitcher.css';
 
-import SwitcherButton from '../SwitcherButton';
+import { SwitcherButton } from '..';
 
-export default function SlideSwitcher() {
+export function SlideSwitcher() {
     return (
         <React.Fragment>
             <SwitcherButton>&gt;</SwitcherButton>

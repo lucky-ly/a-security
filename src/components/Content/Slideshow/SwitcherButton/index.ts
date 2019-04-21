@@ -1,2 +1,2 @@
-export { default } from "./SwitcherButton";
+export { SwitcherButton } from "./SwitcherButton";
 export { ISwitcherButtonProps } from "./SwitcherButton"

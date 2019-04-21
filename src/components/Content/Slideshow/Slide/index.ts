@@ -1,2 +1,2 @@
 export { ISlideProps } from "./ISlideProps";
-export { default } from "./Slide";
+export { Slide } from "./Slide";

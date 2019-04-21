@@ -1,1 +1,1 @@
-export { default } from "./VerticalSliderButton";
+export { VerticalSliderButton } from "./VerticalSliderButton";
