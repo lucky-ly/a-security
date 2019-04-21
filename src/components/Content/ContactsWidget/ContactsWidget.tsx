@@ -14,7 +14,7 @@ interface IContactsWidgetProps extends IParent {
 export default function ContactsWidget(props: IContactsWidgetProps) {
     return (
         <React.Fragment>
-            <div className="contacts-widget__phone-number">{props.phoneNumber}</div>
+            <a href={`tel:${props.phoneNumber}`} className="contacts-widget__phone-number">{phoneFormatted(props.phoneNumber)}</a>
             <VerticalSliderButton
                 url={props.callBackUrl}
                 text="Обратный звонок"
@@ -25,4 +25,11 @@ export default function ContactsWidget(props: IContactsWidgetProps) {
                 backroundColor="#6F6AFF">#</VerticalSliderButton>
         </React.Fragment>
     );
+}
+
+function phoneFormatted(phoneNumber: string): string {
+    const country = phoneNumber.slice(0, 2);
+    const city = phoneNumber.slice(2, 5);
+    const num = phoneNumber.slice(5);
+    return (`${country} (${city}) ${num.slice(0, 3)}-${num.slice(3, 5)}-${num.slice(5)}`);
 }

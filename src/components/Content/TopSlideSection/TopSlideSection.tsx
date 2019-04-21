@@ -33,7 +33,7 @@ export default class TopSlideSection extends React.Component<IProps, ISlideShow<
                 </Slide>
 
                 <div className="top-slide-section__contacts-widget">
-                    <ContactsWidget phoneNumber="+7 (343) 344-60-60" callBackUrl="#/requestcallback" placeOrderUrl="#/placeorder"/>
+                    <ContactsWidget phoneNumber="+73433446060" callBackUrl="#/requestcallback" placeOrderUrl="#/placeorder"/>
                 </div>
 
                 <div className="top-slide-section__switcher-widget">
