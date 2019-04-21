@@ -1,4 +1,5 @@
 .slide-button {
+    display: block;
     height: 80px;
     font-family: 'FuturaPT-Demi', 'FuturaPT', Arial, Helvetica, sans-serif;
     padding: 28px;
@@ -11,6 +12,20 @@
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;
+}
+
+.slide-button__text {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.slide-button:link,
+.slide-button:visited,
+.slide-button:active,
+.slide-button:hover
+{
+    text-decoration: none;
+    color: inherit;
 }
 
 .slide-button_type-action:hover::before {
@@ -34,20 +49,6 @@
     border-bottom: 3px solid #6F6AFF;
     background: rgba(111, 106, 255, .3);
     width: 256px;
-}
-
-.slide-button a {
-    vertical-align: middle;
-    display: inline-block;
-}
-
-.slide-button a:link,
-.slide-button a:visited,
-.slide-button a:active,
-.slide-button a:hover
-{
-    text-decoration: none;
-    color: inherit;
 }
 
 .slide-button__arrow {

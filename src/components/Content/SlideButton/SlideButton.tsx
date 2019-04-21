@@ -9,18 +9,18 @@ export default function SlideButton(props: ISlideButtonProps) {
     switch (props.type) {
         case SlideButtonType.Action:
             return (
-                <div className="slide-button slide-button_type-action">
-                    <a href={props.url}>{props.text}</a>
+                <a className="slide-button slide-button_type-action" href={props.url}>
+                    <span className="slide-button__text">{props.text}</span>
                     <i className="slide-button__arrow">></i>
-                </div>
+                </a>
             )
             
         case SlideButtonType.Description:
             return (
-                <div className="slide-button slide-button_type-description">
-                    <a href={props.url}>{props.text}</a>
+                <a className="slide-button slide-button_type-description" href={props.url}>
+                    <span className="slide-button__text">{props.text}</span>
                     <span className="slide-button__line"/>
-                </div>
+                </a>
             )
     
         default:
