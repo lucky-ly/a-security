@@ -1,0 +1,34 @@
+.slider {
+    height: 80px;
+    min-height: 80px;
+    width: 80px;
+    min-width: 80px;
+    line-height: 80px;
+    text-align: left;
+    display: block;
+    overflow: hidden;
+}
+
+.slider:hover {
+    /* height: auto; */
+}
+
+.slider__icon {
+    width: 80px;
+    text-align: center;
+}
+
+.slider__text {
+    transform: rotate(90deg);
+    transform-origin: left top;
+    margin-left: 80px;
+    width: auto;
+}
+
+.slider:hover,
+.slider:active,
+.slider:visited,
+.slider:link {
+    color: #ffffff;
+    text-decoration: none;
+}
