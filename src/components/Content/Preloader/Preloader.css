@@ -1,0 +1,21 @@
+.preloader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.preloader__animation {
+    margin: 0 auto;
+    display: block;
+    animation: fadeloop 1s ease-in infinite;
+}
+
+@keyframes fadeloop {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}

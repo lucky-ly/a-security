@@ -4,6 +4,7 @@ import 'normalize.css';
 import './App.css';
 
 import Content from './components/Content/Content';
+import { Preloader } from './components/Content/Preloader';
 import { MainMenu, Sidebar } from "./components/Sidebar";
 import { PreloaderManager } from './data-management/PreloaderManager';
 
@@ -29,6 +30,7 @@ class App extends React.Component<Readonly<{}>, IAppState> {
     return (
       <React.Fragment>
         <Content isLoaded={this.state.isLoaded}/>
+        <Preloader isLoaded={this.state.isLoaded}/>
         <Sidebar isLoaded={this.state.isLoaded}>
           <MainMenu/>
         </Sidebar>
