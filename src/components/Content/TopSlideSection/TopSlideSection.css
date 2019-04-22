@@ -3,6 +3,7 @@
     color: #ffffff;
     background: #302F41;
     position: relative;
+    overflow: hidden;
 }
 
 .top-slide-section__contacts-widget {
