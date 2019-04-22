@@ -1,0 +1,39 @@
+/* .top-slide-section__contacts-widget */
+.top-slide-section__contacts-widget_enter {
+    margin-top: -80px;
+}
+.top-slide-section__contacts-widget_enter-active,
+.top-slide-section__contacts-widget_enter-done {
+    margin-top: 0;
+}
+
+/* .top-slide-section__switcher-widget */
+.top-slide-section__switcher-widget_enter {
+    margin-right: -800px;
+}
+.top-slide-section__switcher-widget_enter-active,
+.top-slide-section__switcher-widget_enter-done {
+    margin-right: 0;
+}
+
+/* .slide__content */
+.slide__content_enter {
+    margin-left: -10px;
+    opacity: 0;
+}
+.slide__content_enter-active,
+.slide__content_enter-done {
+    margin-left: 0;
+    opacity: 1;
+}
+.slide__content_exit-active,
+.slide__content_exit-done {
+    margin-left: -10px;
+    opacity: 0;
+}
+
+/* .slide__curtain */
+.slide__curtain_exit-done,
+.slide__curtain_exit-active {
+    width: 0;
+}

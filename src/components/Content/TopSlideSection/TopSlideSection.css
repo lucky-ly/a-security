@@ -13,14 +13,6 @@
     transition: margin .4s ease-out;
 }
 
-.top-slide-section__contacts-widget_enter {
-    margin-top: -80px;
-}
-.top-slide-section__contacts-widget_enter-active,
-.top-slide-section__contacts-widget_enter-done {
-    margin-top: 0;
-}
-
 .top-slide-section__switcher-widget {
     position: absolute;
     bottom: 0;
@@ -30,14 +22,6 @@
     transition: margin .4s ease-out;
 }
 
-.top-slide-section__switcher-widget_enter {
-    margin-right: -800px;
-}
-.top-slide-section__switcher-widget_enter-active,
-.top-slide-section__switcher-widget_enter-done {
-    margin-right: 0;
-}
-
 .slide__content {
     position: relative;
     box-sizing: border-box;
@@ -45,24 +29,6 @@
     padding-top: 120px;
     transition: margin .4s ease-out, opacity .4s ease-out;
 }
-
-.slide__content_enter {
-    margin-left: -10px;
-    opacity: 0;
-}
-
-.slide__content_enter-active,
-.slide__content_enter-done {
-    margin-left: 0;
-    opacity: 1;
-}
-
-.slide__content_exit-active,
-.slide__content_exit-done {
-    margin-left: -10px;
-    opacity: 0;
-}
-
 
 .slide__background {
     position: absolute;
@@ -88,11 +54,6 @@
     width: 100%;
     height: 100%;
     transition: width .2s ease-out;
-}
-
-.slide__curtain_exit-done,
-.slide__curtain_exit-active {
-    width: 0;
 }
 
 .slide__overlay {

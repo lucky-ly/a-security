@@ -1,5 +1,6 @@
 import * as React from "react";
 
+import './Animations.css';
 import './TopSlideSection.css';
 
 import ITopSlideData from 'src/data-types/Slideshow/ITopSlideData';
