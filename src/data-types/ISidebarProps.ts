@@ -1,6 +1,5 @@
+import { ILoadable } from './ILoadable';
 import IParent from './IParent';
 
-// tslint:disable-next-line:no-empty-interface
-export default interface ISidebarProps extends IParent {
-
+export default interface ISidebarProps extends IParent, ILoadable {
 }

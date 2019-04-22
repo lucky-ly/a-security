@@ -1,19 +1,38 @@
 import * as React from 'react';
 
 import './Content.css';
+
+import { ILoadable } from 'src/data-types/ILoadable';
 import TopSlideSectionContainer from './TopSlideSection/TopSlideSectionContainer';
 
-class Content extends React.Component {
-    constructor(props: Readonly<{}>) {
+// tslint:disable-next-line: no-empty-interface
+interface IContentProps extends ILoadable {
+
+}
+
+// tslint:disable-next-line: no-empty-interface
+interface IContentState extends ILoadable {
+
+}
+
+class Content extends React.Component<IContentProps,IContentState> {
+    constructor(props: IContentProps) {
         super(props);
+        this.state = {
+            isLoaded: props.isLoaded
+        }
+    }
+
+    public componentWillReceiveProps = (nextProps: IContentProps) => {
+        this.setState({ isLoaded: nextProps.isLoaded });
     }
 
     public render() {
         return (
             <div className="content-root">
-                <TopSlideSectionContainer/>
-
-                <div id="lipsum">
+                <TopSlideSectionContainer isLoaded={this.state.isLoaded}/>
+                <div className="content-root__padded">
+                    <div id="lipsum">
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas placerat ex nec felis congue tempor. Vivamus porta consequat lectus at vehicula. Nullam pulvinar, leo facilisis volutpat posuere, felis quam lacinia lacus, sed varius odio dui non quam. Phasellus interdum dui vitae massa posuere, et porta metus faucibus. Phasellus at nunc diam. Sed pretium orci tellus, in rhoncus nulla sodales id. Ut tristique viverra neque, non elementum mi. Proin finibus lacus ipsum, vitae tempus mi congue ac. Nam sem velit, posuere non volutpat at, tempus vitae ipsum. Ut elementum iaculis consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor nunc et laoreet lobortis.
                     </p>
@@ -44,6 +63,7 @@ class Content extends React.Component {
                     <p>
                         Nulla vehicula, lectus ac gravida aliquam, purus eros dictum erat, eget convallis eros libero quis lectus. Curabitur sed turpis eleifend, tincidunt augue eu, finibus tortor. Pellentesque lectus dolor, interdum pellentesque nisi quis, consectetur tincidunt erat. Sed aliquam justo in nulla ultrices, ornare tincidunt dui lacinia. In nec purus dui. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer at quam id urna scelerisque lobortis lacinia at neque. Etiam scelerisque mauris ligula, id commodo sapien accumsan vel. Proin mauris lectus, sagittis ut felis nec, viverra feugiat leo. Suspendisse sem mi, consequat sit amet dui id, pellentesque varius libero. Donec ante arcu, mollis sit amet sem sit amet, mattis dapibus nibh. Sed in ultricies lorem. Suspendisse at dui arcu. Mauris semper, est nec tincidunt pretium, orci augue pulvinar est, at vulputate urna nisl molestie enim.
                     </p>
+                </div>
                 </div>
             </div>
         );

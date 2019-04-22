@@ -1,3 +1,7 @@
 .content-root {
-    margin-left: 80px;
+    background: #ffffff;
+}
+
+.content-root__padded {
+    padding-left: 80px;
 }

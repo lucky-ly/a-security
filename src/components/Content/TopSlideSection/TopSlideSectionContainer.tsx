@@ -5,24 +5,40 @@ import TopSlideSection from './TopSlideSection';
 import IDataProvider from 'src/data-providers/IDataProvider';
 import TopSlideDataProvider from "src/data-providers/TopSlideDataProvider";
 
+import { ILoadable } from 'src/data-types/ILoadable';
 import IParent from 'src/data-types/IParent';
 import ISlideShow from 'src/data-types/Slideshow/ISlideShow';
 import ITopSlideData from "src/data-types/Slideshow/ITopSlideData";
 
-export default class TopSlideSectionContainer extends React.Component {
+export interface ITopSliderSectionContainerProps extends IParent, ILoadable {
+
+}
+
+// tslint:disable-next-line: no-empty-interface
+export interface ITopSliderSectionContainerState extends ILoadable {
+}
+
+export default class TopSlideSectionContainer extends React.Component<ITopSliderSectionContainerProps, ITopSliderSectionContainerState> {
     private dataProvider: IDataProvider<ISlideShow<ITopSlideData>>;
     
-    constructor(props: IParent) {
+    constructor(props: ITopSliderSectionContainerProps) {
         super(props)
 
         const provider = new TopSlideDataProvider();
 
         this.dataProvider = provider;
+        this.state = {
+            isLoaded: props.isLoaded,
+        };
+    }
+
+    public componentWillReceiveProps = (nextProps: ITopSliderSectionContainerProps) => {
+        this.setState({ isLoaded: nextProps.isLoaded });
     }
 
     public render() {
         return (
-            <TopSlideSection slideShowData={this.dataProvider.getData()}/>
+            <TopSlideSection isLoaded={this.state.isLoaded} slideShowData={this.dataProvider.getData()}/>
         )
     }
 }

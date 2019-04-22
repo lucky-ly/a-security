@@ -11,14 +11,22 @@ import ToggleButtonIcon from './ToggleButtonIcon';
 class Sidebar extends React.Component<ISidebarProps, ISidebarState> {
     private content: any;
     private timeoutMs: number;
+    private preloadTimeoutMs: number;
 
     constructor(props: ISidebarProps) {
         super(props);
         this.state = {
+            isLoaded: props.isLoaded,
             isOpen: false,
         };
         this.content = props.children;
         this.timeoutMs = 800;
+        this.preloadTimeoutMs = 600;
+    }
+
+    public componentWillReceiveProps = (nextProps: ISidebarProps) =>
+    {
+        this.setState({ isLoaded: nextProps.isLoaded });
     }
 
     public render() {
@@ -28,22 +36,24 @@ class Sidebar extends React.Component<ISidebarProps, ISidebarState> {
                     <div className="sidebar-backdrop" onClick={this.sidebarClose}/>
                 </CSSTransition>
 
-                <div className="sidebar">
-                    <div className="sidebar__logo">
-                        <Logo title="На главную"/>
-                    </div>
-
-                    <div className={this.switchOpenClass("sidebar__movable")} onMouseEnter={this.sidebarOpen} onMouseLeave={this.sidebarClose}>
-                        <div className="sidebar__content">
-                            {this.content}
+                <CSSTransition in={this.state.isLoaded} appear={true} timeout={this.preloadTimeoutMs} classNames="sidebar">
+                    <div className="sidebar">
+                        <div className="sidebar__logo">
+                            <Logo title="На главную"/>
                         </div>
-                        <div className="sidebar__toggle-button" onClick={this.toggleOpen}>
-                            <div className="toggle-button__icon">
-                                <ToggleButtonIcon isOpen={this.state.isOpen}/>
+
+                        <div className={this.switchOpenClass("sidebar__movable")} onMouseEnter={this.sidebarOpen} onMouseLeave={this.sidebarClose}>
+                            <div className="sidebar__content">
+                                {this.content}
+                            </div>
+                            <div className="sidebar__toggle-button" onClick={this.toggleOpen}>
+                                <div className="toggle-button__icon">
+                                    <ToggleButtonIcon isOpen={this.state.isOpen}/>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </CSSTransition>
             </React.Fragment>
         );
     }

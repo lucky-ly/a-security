@@ -25,8 +25,15 @@
 .sidebar {
     z-index: 3; /* Sidebar is above the backdrop when both are visible. */
     position: fixed;
-    top: 0;
+    bottom: 100vh;
     left: 0;
+    height: 100vh;
+
+    transition: bottom .6s ease-in;
+}
+
+.sidebar-enter-done,
+.sidebar-enter-active {
     bottom: 0;
 }
 
