@@ -15,6 +15,10 @@ import { SlideButton, SlideButtonType, SlidePreview, SlideSwitcher } from '../Sl
 
 export interface ITopSlideSectionState extends ILoadable {
     currentSlideIndex: number;
+    previewContainerTransitioned: boolean;
+    contactsContainerTransitioned: boolean;
+    curtainTransitioned: boolean;
+    contentTransitioned: boolean;
 }
 
 export default class TopSlideSection extends React.Component<ITopSlideSectionProps, ITopSlideSectionState> {
@@ -24,8 +28,12 @@ export default class TopSlideSection extends React.Component<ITopSlideSectionPro
 
         this.slides = props.slideShowData.slides;
         this.state = {
+            contactsContainerTransitioned: props.isLoaded,
+            contentTransitioned: props.isLoaded,
             currentSlideIndex: props.slideShowData.currentSlide,
+            curtainTransitioned: props.isLoaded,
             isLoaded: props.isLoaded,
+            previewContainerTransitioned: props.isLoaded,
         };
     }
 
@@ -73,13 +81,28 @@ export default class TopSlideSection extends React.Component<ITopSlideSectionPro
             <section className="top-slide-section">
                 <div className="slide__background">
                     <div className="slide__image" style={styles} />
-                    <CSSTransition in={!this.state.isLoaded} timeout={timeouts.curtain} classNames={curtainClasses} unmountOnExit={true}>
+                    <CSSTransition
+                        in={!this.state.isLoaded}
+                        timeout={timeouts.curtain}
+                        classNames={curtainClasses}
+                        unmountOnExit={true}
+                        // tslint:disable-next-line: jsx-no-lambda
+                        onEntered={() => { this.setState({ curtainTransitioned: true }) }}
+                        >
                         <div className="slide__curtain" />
                     </CSSTransition>
                     <div className="slide__overlay" />
                 </div>
                 
-                <CSSTransition in={this.state.isLoaded} timeout={timeouts.content} classNames={contentClasses} unmountOnExit={true} mountOnEnter={true}>
+                <CSSTransition
+                    in={this.state.isLoaded && this.state.previewContainerTransitioned}
+                    timeout={timeouts.content}
+                    classNames={contentClasses}
+                    unmountOnExit={true}
+                    mountOnEnter={true}
+                    // tslint:disable-next-line: jsx-no-lambda
+                    onEntered={() => { this.setState({ contentTransitioned: true }) }}
+                    >
                     <div className="slide__content">
                         <div className="slide__number">{currentSlide.number.toString().padStart(2, '0') + '.'}</div>
                         <h1 className="slide__title">{currentSlide.title}</h1>
@@ -92,18 +115,34 @@ export default class TopSlideSection extends React.Component<ITopSlideSectionPro
                 </CSSTransition>
 
 
-                <CSSTransition in={this.state.isLoaded} appear={true} timeout={timeouts.content} classNames={contactClasses} unmountOnExit={true} mountOnEnter={true}>
+                <CSSTransition
+                    in={this.state.isLoaded}
+                    timeout={timeouts.content}
+                    classNames={contactClasses}
+                    unmountOnExit={true}
+                    mountOnEnter={true}
+                    // tslint:disable-next-line: jsx-no-lambda
+                    onEntered={() => { this.setState({ contactsContainerTransitioned: true }) }}
+                    >
                     <div className="top-slide-section__contacts-widget">
                         <ContactsWidget phoneNumber="+73433446060" callBackUrl="#/requestcallback" placeOrderUrl="#/placeorder"/>
                     </div>
                 </CSSTransition>
 
-                <CSSTransition in={this.state.isLoaded} appear={true} timeout={timeouts.content} classNames={switcherClasses} unmountOnExit={true} mountOnEnter={true}>
+                <CSSTransition
+                    in={this.state.isLoaded}
+                    timeout={timeouts.content}
+                    classNames={switcherClasses}
+                    unmountOnExit={true}
+                    mountOnEnter={true}
+                    // tslint:disable-next-line: jsx-no-lambda
+                    onEntered={()=>{ this.setState({ previewContainerTransitioned: true }) }}
+                    >
                     <div className="top-slide-section__switcher-widget">
                         <div className="top-slide-section__slide-switcher">
                             <SlideSwitcher/>
                         </div>
-                        <SlidePreview data={this.getNextSlide()}/>
+                        <SlidePreview isLoaded={this.state.isLoaded && this.state.previewContainerTransitioned} data={this.getNextSlide()}/>
                     </div>
                 </CSSTransition>
             </section>
