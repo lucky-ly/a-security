@@ -6,7 +6,7 @@ import "./Sidebar.css";
 import ISidebarProps from 'src/data-types/ISidebarProps';
 import ISidebarState from 'src/data-types/ISidebarState';
 import Logo from './Logo';
-import ToggleButtonIcon from './ToggleButtonIcon';
+import ToggleButtonIcon from './ToggleButtonIcon/ToggleButtonIcon';
 
 class Sidebar extends React.Component<ISidebarProps, ISidebarState> {
     private content: any;
