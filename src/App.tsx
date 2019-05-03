@@ -9,34 +9,35 @@ import { MainMenu, Sidebar } from "./components/Sidebar";
 import { PreloaderManager } from './data-management/PreloaderManager';
 
 interface IAppState {
-  isLoaded: boolean;
+    isLoaded: boolean;
+    currentPageUrl?: string;
 }
 
 class App extends React.Component<Readonly<{}>, IAppState> {
-  private dataLoader: PreloaderManager;
-  constructor(props: Readonly<{}>) {
-    super(props);
+    private dataLoader: PreloaderManager;
+    constructor(props: Readonly<{}>) {
+        super(props);
 
-    this.dataLoader = new PreloaderManager();
-    this.dataLoader.onDataLoaded((e) => this.setState({isLoaded: true}));
-    this.dataLoader.loadData(4000);
+        this.dataLoader = new PreloaderManager();
+        this.dataLoader.onDataLoaded((e) => this.setState({isLoaded: true}));
+        this.dataLoader.loadData(4000);
 
-    this.state = {
-      isLoaded: false
-    };
-  }
+        this.state = {
+            isLoaded: false
+        };
+    }
 
-    public render() {
-    return (
-      <React.Fragment>
-        <Content isLoaded={this.state.isLoaded}/>
-        <Preloader isLoaded={this.state.isLoaded}/>
-        <Sidebar isLoaded={this.state.isLoaded}>
-          <MainMenu/>
-        </Sidebar>
-      </React.Fragment>
-    );
-  }
+      public render() {
+        return (
+            <React.Fragment>
+                <Content isLoaded={this.state.isLoaded}/>
+                <Preloader isLoaded={this.state.isLoaded}/>
+                <Sidebar isLoaded={this.state.isLoaded}>
+                    <MainMenu/>
+                </Sidebar>
+            </React.Fragment>
+        );
+    }
 }
 
 export default App;
