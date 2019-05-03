@@ -1,8 +1,8 @@
 import IDataProvider from './IDataProvider';
 
-import slideImage1 from "../assets/images/photo/top-slide-1.jpg";
-import slideImage2preview from "../assets/images/photo/top-slide-2-preview.jpg";
-import slideImage2 from "../assets/images/photo/top-slide-2.jpg";
+import slideImage1 from "../assets/images/photo/top-slideshow/top-slide-1.jpg";
+import slideImage2preview from "../assets/images/photo/top-slideshow/top-slide-2-preview.jpg";
+import slideImage2 from "../assets/images/photo/top-slideshow/top-slide-2.jpg";
 
 import ITopSlideData from '../data-types/Slideshow/ITopSlideData';
 
