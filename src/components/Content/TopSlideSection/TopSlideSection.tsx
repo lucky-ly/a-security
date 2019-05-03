@@ -21,16 +21,16 @@ export interface ITopSlideSectionState extends ILoadable {
     contentTransitioned: boolean;
 }
 
-export default class TopSlideSection extends React.Component<ITopSlideSectionProps, ITopSlideSectionState> {
+export class TopSlideSection extends React.Component<ITopSlideSectionProps, ITopSlideSectionState> {
     private slides: ITopSlideData[];
     constructor(props: ITopSlideSectionProps) {
         super(props)
 
-        this.slides = props.slideShowData.slides;
+        this.slides = props.slideShowData;
         this.state = {
             contactsContainerTransitioned: props.isLoaded,
             contentTransitioned: props.isLoaded,
-            currentSlideIndex: props.slideShowData.currentSlide,
+            currentSlideIndex: 0,
             curtainTransitioned: props.isLoaded,
             isLoaded: props.isLoaded,
             previewContainerTransitioned: props.isLoaded,
@@ -38,7 +38,7 @@ export default class TopSlideSection extends React.Component<ITopSlideSectionPro
     }
 
     public componentWillReceiveProps = (nextProps: ITopSlideSectionProps) => {
-        this.setState({ isLoaded: nextProps.isLoaded, currentSlideIndex: nextProps.slideShowData.currentSlide });
+        this.setState({ isLoaded: nextProps.isLoaded, currentSlideIndex: 0 });
     }
 
     public render() {

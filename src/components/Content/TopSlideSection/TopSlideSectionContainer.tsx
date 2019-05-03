@@ -7,7 +7,6 @@ import TopSlideDataProvider from "src/data-providers/TopSlideDataProvider";
 
 import { ILoadable } from 'src/data-types/ILoadable';
 import IParent from 'src/data-types/IParent';
-import ISlideShow from 'src/data-types/Slideshow/ISlideShow';
 import ITopSlideData from "src/data-types/Slideshow/ITopSlideData";
 
 export interface ITopSliderSectionContainerProps extends IParent, ILoadable {
@@ -18,8 +17,8 @@ export interface ITopSliderSectionContainerProps extends IParent, ILoadable {
 export interface ITopSliderSectionContainerState extends ILoadable {
 }
 
-export default class TopSlideSectionContainer extends React.Component<ITopSliderSectionContainerProps, ITopSliderSectionContainerState> {
-    private dataProvider: IDataProvider<ISlideShow<ITopSlideData>>;
+export class TopSlideSectionContainer extends React.Component<ITopSliderSectionContainerProps, ITopSliderSectionContainerState> {
+    private dataProvider: IDataProvider<ITopSlideData[]>;
     
     constructor(props: ITopSliderSectionContainerProps) {
         super(props)
