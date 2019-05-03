@@ -19,13 +19,12 @@ export interface ITopSliderSectionContainerState extends ILoadable {
 
 export class TopSlideSectionContainer extends React.Component<ITopSliderSectionContainerProps, ITopSliderSectionContainerState> {
     private dataProvider: IDataProvider<ITopSlideData[]>;
+    private data: ITopSlideData[];
     
     constructor(props: ITopSliderSectionContainerProps) {
         super(props)
-
-        const provider = new TopSlideDataProvider();
-
-        this.dataProvider = provider;
+        this.dataProvider = new TopSlideDataProvider();
+        this.data = this.dataProvider.getData();
         this.state = {
             isLoaded: props.isLoaded,
         };
@@ -37,7 +36,7 @@ export class TopSlideSectionContainer extends React.Component<ITopSliderSectionC
 
     public render() {
         return (
-            <TopSlideSection isLoaded={this.state.isLoaded} slideShowData={this.dataProvider.getData()}/>
+            <TopSlideSection isLoaded={this.state.isLoaded} slideShowData={this.data}/>
         )
     }
 }

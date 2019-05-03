@@ -1,0 +1,14 @@
+.content-section {
+    margin-top: 160px;
+    margin-right: 160px;
+    padding: 0 0 0 80px;
+}
+
+.content-section-wide {
+    margin-top: 160px;
+}
+
+.content-section-flex {
+    display: flex;
+    color: pink;
+}

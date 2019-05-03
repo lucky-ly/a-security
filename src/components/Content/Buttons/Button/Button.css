@@ -1,0 +1,29 @@
+.button {
+    display: block;
+    height: 80px;
+    font-family: 'FuturaPT-Demi', 'FuturaPT', Arial, Helvetica, sans-serif;
+    padding: 28px;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+
+    margin-right: 32px;
+
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.button__text {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.button:link,
+.button:visited,
+.button:active,
+.button:hover
+{
+    text-decoration: none;
+    color: inherit;
+}

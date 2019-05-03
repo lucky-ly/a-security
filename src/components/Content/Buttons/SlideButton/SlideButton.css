@@ -1,0 +1,47 @@
+.button_type-action:hover::before {
+    height: 100%;
+}
+
+.button_type-action::before {
+    z-index: -1;
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0px;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: #6F6AFF;
+    transition: height .4s ease;
+}
+
+.button_type-action {
+    border-bottom: 3px solid #6F6AFF;
+    background: rgba(111, 106, 255, .3);
+    width: 256px;
+    z-index: 0;
+}
+
+.button__arrow {
+    position: absolute;
+    right: 28px;
+}
+
+
+.button_type-description:hover::after {
+    width: 64px;
+    margin-left: 16px;
+}
+
+.button_type-description::after {
+    display: inline-block;
+    vertical-align: middle;
+    background: #ffffff;
+    width: 40px;
+    height: 2px;
+    margin-left: 40px;
+
+    content: "";
+
+    transition: width .4s ease, margin .4s ease;
+}
