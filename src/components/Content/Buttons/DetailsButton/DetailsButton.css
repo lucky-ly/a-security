@@ -1,0 +1,17 @@
+.button:hover .details-button__line {
+    width: 64px;
+    margin-left: 16px;
+}
+
+.details-button__line {
+    display: inline-block;
+    vertical-align: middle;
+    background: #ffffff;
+    width: 40px;
+    height: 2px;
+    margin-left: 40px;
+
+    content: "";
+
+    transition: width .4s ease, margin .4s ease;
+}

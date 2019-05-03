@@ -3,8 +3,9 @@ import * as React from "react";
 import './FeaturesSlideshowSection.css';
 
 import IParent from 'src/data-types/IParent';
+import { DetailsButton } from '../Buttons/DetailsButton';
 import { ContentSection } from '../ContentSection';
-import { SlideButton, SlideButtonType, SlideSwitcher } from '../Slideshow';
+import { SlideSwitcher } from '../Slideshow';
 import { IFeaturesSlideshowSlide } from './IFeaturesSlideshowSlide';
 
 // tslint:disable-next-line: no-empty-interface
@@ -40,7 +41,7 @@ export class FeaturesSlideshowSection extends React.Component<IFeaturesSlideshow
                 <div className="features-slideshow__content">
                     <div className="features-slideshow-content__title">{currentSlide.title}</div>
                     <div className="features-slideshow-content__subtitle">{currentSlide.subtitle}</div>
-                    <SlideButton text="Подробнее о компании" url={currentSlide.detailsUrl} type={SlideButtonType.Description}/>
+                    <DetailsButton text="Подробнее о компании" url={currentSlide.detailsUrl} color="#6F6AFF"/>
                 </div>
                 <div className="features-slideshow__switcher-widget">
                     <div className="switcher-widget__slide-switcher">

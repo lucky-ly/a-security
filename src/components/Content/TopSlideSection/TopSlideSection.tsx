@@ -10,6 +10,7 @@ import { CSSTransition } from 'react-transition-group';
 import { CSSTransitionClassNames } from 'react-transition-group/CSSTransition';
 import { ILoadable } from 'src/data-types/ILoadable';
 import { isArray } from 'util';
+import { DetailsButton } from '../Buttons/DetailsButton';
 import { ContactsWidget } from '../ContactsWidget/ContactsWidget';
 import { SlideButton, SlideButtonType, SlidePreview, SlideSwitcher } from '../Slideshow';
 
@@ -109,7 +110,7 @@ export class TopSlideSection extends React.Component<ITopSlideSectionProps, ITop
                         <h2 className="slide__subtitle" dangerouslySetInnerHTML={{ __html: this.getSubtitle(currentSlide.subtitle) }} />
                         <div className="slide__buttons">
                             <SlideButton type={SlideButtonType.Action} url={currentSlide.actionUrl} text={currentSlide.actionText}/>
-                            <SlideButton type={SlideButtonType.Description} url={currentSlide.descriptionUrl} text={currentSlide.descriptionText}/>
+                            <DetailsButton url={currentSlide.descriptionUrl} text={currentSlide.descriptionText}/>
                         </div>
                     </div>
                 </CSSTransition>
