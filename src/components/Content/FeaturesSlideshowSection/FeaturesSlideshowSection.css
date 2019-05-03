@@ -22,8 +22,10 @@
 }
 
 .features-slideshow__content {
+    position: relative;
     padding-left: 80px; 
     padding-top: 64px;
+    z-index: 1;
 }
 
 .features-slideshow-content__title {
@@ -50,6 +52,7 @@
     right: 0;
     left: 400px;
     display: flex;
+    z-index: 0;
 }
 
 .switcher-widget__slide-switcher {
