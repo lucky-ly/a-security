@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import TopSlideSection from './TopSlideSection';
+import { TopSlideSection } from './TopSlideSection';
 
 import IDataProvider from 'src/data-providers/IDataProvider';
 import TopSlideDataProvider from "src/data-providers/TopSlideDataProvider";
