@@ -13,9 +13,9 @@ export default class TopSlideDataProvider implements IDataProvider<ITopSlideData
             {
                 actionText: 'Оставить заявку',
                 actionUrl: '#/hello-world',
-                backgroundUrl: slideImage1,
                 descriptionText: 'Подробнее',
                 descriptionUrl: '#/hello-description',
+                imageUrl: slideImage1,
                 number: 1,
                 subtitle: [
                     'Охранная сигнализация',
@@ -27,9 +27,9 @@ export default class TopSlideDataProvider implements IDataProvider<ITopSlideData
             {
                 actionText: 'Оставить заявку',
                 actionUrl: '#/hello-world',
-                backgroundUrl: slideImage2,
                 descriptionText: 'Подробнее',
                 descriptionUrl: '#/hello-description',
+                imageUrl: slideImage2,
                 number: 2,
                 previewUrl: slideImage2preview,
                 subtitle: [

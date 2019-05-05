@@ -25,7 +25,13 @@
     position: relative;
     padding-left: 80px; 
     padding-top: 64px;
-    z-index: 1;
+    max-width: 560px;
+}
+
+@media screen and (max-width: 1365px){
+    .features-slideshow__content {
+        padding-top: 0;
+    }
 }
 
 .features-slideshow-content__title {
@@ -46,13 +52,16 @@
     margin-top: 24px;
 }
 
+.features-slideshow-content__buttons {
+    margin-top: 40px;
+}
+
 .features-slideshow__switcher-widget {
     position: absolute;
     bottom: 0;
     right: 0;
-    left: 400px;
+    left: -160px;
     display: flex;
-    z-index: 0;
 }
 
 .switcher-widget__slide-switcher {
@@ -75,8 +84,11 @@
     font-family: 'FuturaPT-Medium', 'FuturaPT', Arial, Helvetica, sans-serif;
     font-size: 30px;
     font-weight: 500;
-    line-height: 50px;
+    /* line-height: 50px; */
+
+    height: 160px;
 
     background-color: #302F41;
     padding: 55px 64px;
+    box-sizing: border-box;
 }

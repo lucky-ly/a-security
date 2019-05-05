@@ -1,4 +1,4 @@
 export default interface ISlide {
-    backgroundUrl: string;
+    imageUrl: string;
     previewUrl?: string;
 }

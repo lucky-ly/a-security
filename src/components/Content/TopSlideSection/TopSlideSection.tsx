@@ -46,7 +46,7 @@ export class TopSlideSection extends React.Component<ITopSlideSectionProps, ITop
     public render() {
         const currentSlide = this.slides[this.state.currentSlideIndex];
         const styles: React.CSSProperties = {
-            backgroundImage: `url(${currentSlide.backgroundUrl})`
+            backgroundImage: `url(${currentSlide.imageUrl})`
         };
 
         const timeouts = {

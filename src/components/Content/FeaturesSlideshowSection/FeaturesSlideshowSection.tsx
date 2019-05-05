@@ -10,7 +10,12 @@ import { IFeaturesSlideshowSlide } from './IFeaturesSlideshowSlide';
 
 // tslint:disable-next-line: no-empty-interface
 export interface IFeaturesSlideshowSectionProps extends IParent {
-    data: IFeaturesSlideshowSlide[]
+    slides: IFeaturesSlideshowSlide[]
+    mainImageUrl: string;
+    title: string;
+    subtitle: string;
+    detailsUrl: string;
+    detailsText: string;
 }
 
 // tslint:disable-next-line: no-empty-interface
@@ -26,7 +31,7 @@ export class FeaturesSlideshowSection extends React.Component<IFeaturesSlideshow
 
         this.state = {
             currentSlideIndex: 0,
-            slides: props.data,
+            slides: props.slides,
         }
     }
 
@@ -36,20 +41,23 @@ export class FeaturesSlideshowSection extends React.Component<IFeaturesSlideshow
         return (
             <ContentSection id="features-slideshow" className="features-slideshow">
                 <div className="features-slideshow__image">
-                    <img src={currentSlide.backgroundUrl} alt={currentSlide.imageAlt}/>
+                    <img src={this.props.mainImageUrl} alt=""/>
                 </div>
                 <div className="features-slideshow__content">
-                    <div className="features-slideshow-content__title">{currentSlide.title}</div>
-                    <div className="features-slideshow-content__subtitle">{currentSlide.subtitle}</div>
-                    <DetailsButton text="Подробнее о компании" url={currentSlide.detailsUrl} color="#6F6AFF"/>
-                </div>
-                <div className="features-slideshow__switcher-widget">
-                    <div className="switcher-widget__slide-switcher">
-                        <SlideSwitcher/>
+                    <div className="features-slideshow-content__title">{this.props.title}</div>
+                    <div className="features-slideshow-content__subtitle">{this.props.subtitle}</div>
+                    <div className="features-slideshow-content__buttons">
+                        <DetailsButton text={this.props.detailsText} url={this.props.detailsUrl} color="#6F6AFF" inline={true}/>
                     </div>
-                    <div className="switcher-widget__content">
-                        <div className="switcher-widget__icon" style={{ backgroundImage: `url(${currentSlide.iconUrl})` }}/>
-                        <div className="switcher-widget__feature-name">{currentSlide.featureName}</div>
+                    
+                    <div className="features-slideshow__switcher-widget">
+                        <div className="switcher-widget__slide-switcher">
+                            <SlideSwitcher/>
+                        </div>
+                        <div className="switcher-widget__content">
+                            <div className="switcher-widget__icon" style={{ backgroundImage: `url(${currentSlide.imageUrl})` }}/>
+                            <div className="switcher-widget__feature-name">{currentSlide.featureName}</div>
+                        </div>
                     </div>
                 </div>
             </ContentSection>

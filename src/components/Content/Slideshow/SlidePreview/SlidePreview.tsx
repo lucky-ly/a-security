@@ -24,7 +24,7 @@ export class SlidePreview extends React.Component<ISlidePreviewProps, any> {
         const timeoutMs = 400;
 
         const styles: React.CSSProperties = {
-            backgroundImage: `url(${data.previewUrl ? data.previewUrl : data.backgroundUrl})`,
+            backgroundImage: `url(${data.previewUrl ? data.previewUrl : data.imageUrl})`,
             transition: `width ${timeoutMs}ms ease-out`,
         };
 
