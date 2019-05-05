@@ -15,7 +15,7 @@ export const DetailsButton = (props: IProps) => {
     }
 
     return (
-        <Button url={props.url} text={props.text} color={props.color}>
+        <Button url={props.url} text={props.text} color={props.color} inline={props.inline}>
             <span className="details-button__line" style={lineStyle}/>
         </Button>
     )

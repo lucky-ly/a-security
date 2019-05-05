@@ -8,15 +8,21 @@ export interface IButtonProps {
     text: string;
     type?: string;
     color?: string;
+    inline?: boolean;
 }
 
 export const Button = (props: IButtonProps) => {
     const style = {
         color: props.color ? props.color : "inherit",
     };
+
+    const classes = ["button"];
+
+    if (props.type) { classes.push(`button_type-${props.type}`); }
+    if (props.inline) { classes.push(`button_inline`); }
     
     return (
-        <a className={`button ${props.type ? `button_type-${props.type}` : ""}`} href={props.url}>
+        <a className={classes.join(" ")} href={props.url}>
             <span className="button__text" style={style}>{props.text}</span>
             {props.children}
         </a>);

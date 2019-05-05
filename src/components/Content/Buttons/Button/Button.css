@@ -27,3 +27,9 @@
     text-decoration: none;
     color: inherit;
 }
+
+.button_inline {
+    display: inline;
+    padding: 0;
+    height: auto;
+}
