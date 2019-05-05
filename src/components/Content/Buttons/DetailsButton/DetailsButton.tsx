@@ -5,10 +5,10 @@ import "./DetailsButton.css";
 import { Button, IButtonProps } from '../Button';
 
 // tslint:disable-next-line: no-empty-interface
-export interface IProps extends IButtonProps {
+export interface IDetailsButtonProps extends IButtonProps {
 }
 
-export const DetailsButton = (props: IProps) => {
+export const DetailsButton = (props: IDetailsButtonProps) => {
 
     const lineStyle: React.CSSProperties = {
         backgroundColor: props.color ? props.color : "#ffffff",
