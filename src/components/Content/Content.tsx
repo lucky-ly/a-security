@@ -4,6 +4,7 @@ import './Content.css';
 
 import { ILoadable } from 'src/data-types/ILoadable';
 import { FeaturesSlideshowSectionContainer } from './FeaturesSlideshowSection';
+import { ServicesListSectionContainer } from './ServicesListSection';
 import { TopSlideSectionContainer } from './TopSlideSection';
 
 // tslint:disable-next-line: no-empty-interface
@@ -30,12 +31,13 @@ class Content extends React.Component<IContentProps,IContentState> {
 
     public render() {
         return (
-            <div className="content-root">
+            <main className="content-root">
                 <TopSlideSectionContainer isLoaded={this.state.isLoaded}/>
                 <div className="content-root__padded">
                     <FeaturesSlideshowSectionContainer/>
+                    <ServicesListSectionContainer/>
                 </div>
-            </div>
+            </main>
         );
     }
 }

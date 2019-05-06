@@ -6,6 +6,10 @@ export const featuresSlideshow = {
     title: "Круглосуточная защита вашей собственности и\u00a0спокойствия",
 };
 
+export const servicesList = {
+    title: "Наши услуги",
+}
+
 export class Helpers {
     public static formatSubtitle(params: string | string[]) {
         return isArray(params) ? params.join('\u00a0 —\u00a0\u00a0') : params;

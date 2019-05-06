@@ -1,0 +1,19 @@
+.services-list {
+    /* display: flex;
+    flex-wrap: wrap; */
+}
+
+.services-list__title {
+    color: #302F41;
+    font-family: 'FuturaPT-Bold', 'FuturaPT', Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 50px;
+    text-align: left;
+
+    padding: 40px 0;
+}
+
+.services-list__form-link {
+    background: #302F41;
+}

@@ -25,7 +25,7 @@ export class ServicesListDataProvider implements IDataProvider<IServiceDescripti
                 iconUrl: icon1,
                 imageUrl: img1,
                 number: 1,
-                subtitle: "Охранная сигнализация  —  Тревожная кнопка  —  Охрана офиса, магазина, ресторана",
+                subtitle: ["Охранная сигнализация", "Тревожная кнопка", "Охрана офиса, магазина, ресторана"],
                 title: "Дистанционная охрана бизнеса",
             },
             {
@@ -33,7 +33,7 @@ export class ServicesListDataProvider implements IDataProvider<IServiceDescripti
                 iconUrl: icon2,
                 imageUrl: img2,
                 number: 2,
-                subtitle: "Охранная сигнализация  —  Тревожная кнопка  —  Охрана офиса, магазина, ресторана",
+                subtitle: ["Охранная сигнализация", "Тревожная кнопка", "Охрана офиса, магазина, ресторана"],
                 title: "Дистанционная охрана квартир",
             },
             {
@@ -41,7 +41,7 @@ export class ServicesListDataProvider implements IDataProvider<IServiceDescripti
                 iconUrl: icon3,
                 imageUrl: img3,
                 number: 3,
-                subtitle: "Охранная сигнализация  —  Тревожная кнопка  —  Комплексная защита",
+                subtitle: ["Охранная сигнализация", "Тревожная кнопка", "Комплексная защита"],
                 title: "Дистанционная охрана домов",
             },
             {
@@ -49,7 +49,7 @@ export class ServicesListDataProvider implements IDataProvider<IServiceDescripti
                 iconUrl: icon4,
                 imageUrl: img4,
                 number: 4,
-                subtitle: "Проектирование  —  Система пожаротушения, Система дымоудаления  —  Система эвакуации и оповещения людей о пожаре",
+                subtitle: ["Проектирование", "Система пожаротушения, Система дымоудаления", "Система эвакуации и оповещения людей о пожаре"],
                 title: "Пожарная безопасность",
             },
             {
@@ -57,7 +57,7 @@ export class ServicesListDataProvider implements IDataProvider<IServiceDescripti
                 iconUrl: icon5,
                 imageUrl: img5,
                 number: 5,
-                subtitle: "Монтаж  —  Модернизация систем  —  Техническое обслуживание  —  Перевод с Аналоговой системы на IP",
+                subtitle: ["Монтаж", "Модернизация систем", "Техническое обслуживание", "Перевод с Аналоговой системы на IP"],
                 title: "Системы видеонаблюдения",
             },
             {
@@ -65,7 +65,7 @@ export class ServicesListDataProvider implements IDataProvider<IServiceDescripti
                 iconUrl: icon6,
                 imageUrl: img6,
                 number: 6,
-                subtitle: "Ключ-брелок  —  Кард-ключ  —  Электронный код  —  Отпечатки пальцев  —  Сетчатка глаза",
+                subtitle: ["Ключ-брелок", "Кард-ключ", "Электронный код", "Отпечатки пальцев", "Сетчатка глаза"],
                 title: "Системы контроля доступа",
             },
             {
@@ -73,7 +73,7 @@ export class ServicesListDataProvider implements IDataProvider<IServiceDescripti
                 iconUrl: icon7,
                 imageUrl: img7,
                 number: 7,
-                subtitle: "Физическая охрана объектов и мероприятий  —  Сопровождение грузов  —  Антикражные системы  —  Технический сервис",
+                subtitle: ["Физическая охрана объектов и мероприятий", "Сопровождение грузов", "Антикражные системы", "Технический сервис"],
                 title: "Прочие услуги",
             },
         ];

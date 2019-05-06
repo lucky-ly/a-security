@@ -1,0 +1,1 @@
+export { ServiceCard, IServiceCardProps } from "./ServiceCard";
