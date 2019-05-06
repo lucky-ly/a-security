@@ -29,7 +29,7 @@
 }
 
 .button_inline {
-    display: inline;
+    display: inline-block;
     padding: 0;
     height: auto;
 }
