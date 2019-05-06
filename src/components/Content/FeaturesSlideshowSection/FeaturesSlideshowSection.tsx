@@ -56,7 +56,11 @@ export class FeaturesSlideshowSection extends React.Component<IFeaturesSlideshow
                         </div>
                         <div className="switcher-widget__content">
                             <div className="switcher-widget__icon" style={{ backgroundImage: `url(${currentSlide.imageUrl})` }}/>
-                            <div className="switcher-widget__feature-name">{currentSlide.featureName}</div>
+                            <div className="switcher-widget__feature-name-container">
+                                <div className="switcher-widget__feature-name">
+                                    {currentSlide.featureName}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

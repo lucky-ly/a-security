@@ -64,9 +64,6 @@
     display: flex;
 }
 
-.switcher-widget__slide-switcher {
-}
-
 .switcher-widget__icon {
     width: 80px;
     height: 80px;
@@ -79,16 +76,16 @@
     width: 100%;
 }
 
-.switcher-widget__feature-name {
+.switcher-widget__feature-name-container {
     color: #FFFFFF;
-    font-family: 'FuturaPT-Medium', 'FuturaPT', Arial, Helvetica, sans-serif;
+    font-family: 'FuturaPT-Book', 'FuturaPT', Arial, Helvetica, sans-serif;
     font-size: 30px;
     font-weight: 500;
     /* line-height: 50px; */
-
     height: 160px;
-
     background-color: #302F41;
     padding: 55px 64px;
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
 }
