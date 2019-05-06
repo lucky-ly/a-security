@@ -28,6 +28,7 @@
     bottom: 100vh;
     left: 0;
     height: 100vh;
+    border-right: 1px solid #eeeeee;
 
     transition: bottom .6s ease-in;
 }
