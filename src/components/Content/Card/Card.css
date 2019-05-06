@@ -1,0 +1,14 @@
+.card {
+    width: 540px;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.card:nth-child(odd) {
+    top: -286px;
+}
+
+.card:first-child {
+    top: 0;
+}

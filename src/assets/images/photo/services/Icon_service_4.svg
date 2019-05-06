@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Icon_service_4</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M29.4333333,13.3333333 L20,3.91666667 L10.5666667,13.3333333 C7.96666667,15.9333333 6.66666667,19.4 6.66666667,22.7333333 C6.66666667,26.0666667 7.96666667,29.5833333 10.5666667,32.1833333 C13.1666667,34.7833333 16.5833333,36.1 20,36.1 C23.4166667,36.1 26.8333333,34.7833333 29.4333333,32.1833333 C32.0333333,29.5833333 33.3333333,26.0666667 33.3333333,22.7333333 C33.3333333,19.4 32.0333333,15.9333333 29.4333333,13.3333333 Z M10,23.3333333 C10.0166667,20 11.0333333,17.8833333 12.9333333,16 L20,8.78333333 L27.0666667,16.0833333 C28.9666667,17.95 29.9833333,20 30,23.3333333 L10,23.3333333 Z" id="path-1"></path>
+    </defs>
+    <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon_service_4">
+            <rect id="Rectangle" fill="#6F6AFF" x="0" y="0" width="80" height="80"></rect>
+            <g id="icon/action/opacity_24px" transform="translate(20.000000, 20.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g fill-rule="nonzero"></g>
+                <g id="✱-/-Color-/-Icons-/-Black-/-Inactive" mask="url(#mask-2)" fill="#FFFFFF" fill-rule="evenodd">
+                    <rect id="Rectangle" x="0" y="0" width="40" height="40"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
