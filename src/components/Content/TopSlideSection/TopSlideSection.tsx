@@ -8,8 +8,8 @@ import { ITopSlideSectionProps } from './ITopSlideSectionProps';
 
 import { CSSTransition } from 'react-transition-group';
 import { CSSTransitionClassNames } from 'react-transition-group/CSSTransition';
+import { Helpers } from 'src/data-providers/Strings';
 import { ILoadable } from 'src/data-types/ILoadable';
-import { isArray } from 'util';
 import { ActionButton } from '../Buttons/ActionButton';
 import { DetailsButton } from '../Buttons/DetailsButton';
 import { ContactsWidget } from '../ContactsWidget/ContactsWidget';
@@ -25,6 +25,37 @@ export interface ITopSlideSectionState extends ILoadable {
 
 export class TopSlideSection extends React.Component<ITopSlideSectionProps, ITopSlideSectionState> {
     private slides: ITopSlideData[];
+
+    private timeouts = {
+        content: 400,
+        curtain: 200,
+    };
+
+    private curtainClasses: CSSTransitionClassNames = {
+        exitActive: "slide__curtain_exit-active",
+        exitDone: "slide__curtain_exit-done",
+    }
+
+    private contentClasses: CSSTransitionClassNames = {
+        enter: "slide__content_enter",
+        enterActive: "slide__content_enter-active",
+        enterDone: "slide__content_enter-done",
+        exitActive: "slide__content_exit-active",
+        exitDone: "slide__content_exit-done",
+    }
+
+    private contactClasses: CSSTransitionClassNames = {
+        enter: "top-slide-section__contacts-widget_enter",
+        enterActive: "top-slide-section__contacts-widget_enter-active",
+        enterDone: "top-slide-section__contacts-widget_enter-done",
+    }
+
+    private switcherClasses: CSSTransitionClassNames = {
+        enter: "top-slide-section__switcher-widget_enter",
+        enterActive: "top-slide-section__switcher-widget_enter-active",
+        enterDone: "top-slide-section__switcher-widget_enter-done",
+    }
+
     constructor(props: ITopSlideSectionProps) {
         super(props)
 
@@ -49,44 +80,14 @@ export class TopSlideSection extends React.Component<ITopSlideSectionProps, ITop
             backgroundImage: `url(${currentSlide.imageUrl})`
         };
 
-        const timeouts = {
-            content: 400,
-            curtain: 200,
-        };
-
-        const curtainClasses:CSSTransitionClassNames = {
-            exitActive: "slide__curtain_exit-active",
-            exitDone: "slide__curtain_exit-done",
-        }
-
-        const contentClasses:CSSTransitionClassNames = {
-            enter: "slide__content_enter",
-            enterActive: "slide__content_enter-active",
-            enterDone: "slide__content_enter-done",
-            exitActive: "slide__content_exit-active",
-            exitDone: "slide__content_exit-done",
-        }
-
-        const contactClasses:CSSTransitionClassNames = {
-            enter: "top-slide-section__contacts-widget_enter",
-            enterActive: "top-slide-section__contacts-widget_enter-active",
-            enterDone: "top-slide-section__contacts-widget_enter-done",
-        }
-
-        const switcherClasses:CSSTransitionClassNames = {
-            enter: "top-slide-section__switcher-widget_enter",
-            enterActive: "top-slide-section__switcher-widget_enter-active",
-            enterDone: "top-slide-section__switcher-widget_enter-done",
-        }
-
         return (
             <section className="top-slide-section">
                 <div className="slide__background">
                     <div className="slide__image" style={styles} />
                     <CSSTransition
                         in={!this.state.isLoaded}
-                        timeout={timeouts.curtain}
-                        classNames={curtainClasses}
+                        timeout={this.timeouts.curtain}
+                        classNames={this.curtainClasses}
                         unmountOnExit={true}
                         // tslint:disable-next-line: jsx-no-lambda
                         onEntered={() => { this.setState({ curtainTransitioned: true }) }}
@@ -98,17 +99,17 @@ export class TopSlideSection extends React.Component<ITopSlideSectionProps, ITop
                 
                 <CSSTransition
                     in={this.state.isLoaded && this.state.previewContainerTransitioned}
-                    timeout={timeouts.content}
-                    classNames={contentClasses}
+                    timeout={this.timeouts.content}
+                    classNames={this.contentClasses}
                     unmountOnExit={true}
                     mountOnEnter={true}
                     // tslint:disable-next-line: jsx-no-lambda
                     onEntered={() => { this.setState({ contentTransitioned: true }) }}
                     >
                     <div className="slide__content">
-                        <div className="slide__number">{currentSlide.number.toString().padStart(2, '0') + '.'}</div>
+                        <div className="slide__number">{Helpers.formatNumber(currentSlide.number)}</div>
                         <h1 className="slide__title">{currentSlide.title}</h1>
-                        <h2 className="slide__subtitle" dangerouslySetInnerHTML={{ __html: this.getSubtitle(currentSlide.subtitle) }} />
+                        <h2 className="slide__subtitle">{Helpers.formatSubtitle(currentSlide.subtitle)}</h2>
                         <div className="slide__buttons">
                             <ActionButton url={currentSlide.actionUrl} text={currentSlide.actionText}/>
                             <DetailsButton url={currentSlide.descriptionUrl} text={currentSlide.descriptionText}/>
@@ -119,8 +120,8 @@ export class TopSlideSection extends React.Component<ITopSlideSectionProps, ITop
 
                 <CSSTransition
                     in={this.state.isLoaded}
-                    timeout={timeouts.content}
-                    classNames={contactClasses}
+                    timeout={this.timeouts.content}
+                    classNames={this.contactClasses}
                     unmountOnExit={true}
                     mountOnEnter={true}
                     // tslint:disable-next-line: jsx-no-lambda
@@ -133,8 +134,8 @@ export class TopSlideSection extends React.Component<ITopSlideSectionProps, ITop
 
                 <CSSTransition
                     in={this.state.isLoaded}
-                    timeout={timeouts.content}
-                    classNames={switcherClasses}
+                    timeout={this.timeouts.content}
+                    classNames={this.switcherClasses}
                     unmountOnExit={true}
                     mountOnEnter={true}
                     // tslint:disable-next-line: jsx-no-lambda
@@ -149,10 +150,6 @@ export class TopSlideSection extends React.Component<ITopSlideSectionProps, ITop
                 </CSSTransition>
             </section>
         );
-    }
-
-    private getSubtitle(params: string | string[]) {
-        return isArray(params) ? params.join('&#160&#160—&#160&#160') : params;
     }
 
     private getNextSlide(): ITopSlideData {
