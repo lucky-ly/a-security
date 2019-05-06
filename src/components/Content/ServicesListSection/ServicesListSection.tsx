@@ -40,8 +40,8 @@ export class ServicesListSection extends React.Component<IServicesListSectionPro
                 </Card>
                 {cards}
                 <Card className="services-list__form-link">
-                    <span className="form-link__title">Заполните онлайн форму за пару кликов</span>
-                    <span className="form-link__subtitle">Мы бесплатно подберем оптимальный комплект безопасности, учитывая особенности вашего объекта.</span>
+                    <div className="form-link__title">{Strings.formLinkTitle}</div>
+                    <div className="form-link__subtitle">{Strings.formLinkSubtitle}</div>
                     <ActionButton text="Оставить заявку" url="#/place-order" />
                 </Card>
             </ContentSection>

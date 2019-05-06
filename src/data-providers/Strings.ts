@@ -7,6 +7,8 @@ export const featuresSlideshow = {
 };
 
 export const servicesList = {
+    formLinkSubtitle:"Мы бесплатно подберем оптимальный комплект безопасности, учитывая особенности вашего объекта.",
+    formLinkTitle:"Заполните онлайн форму за\u00a0пару кликов",
     title: "Наши услуги",
 }
 
