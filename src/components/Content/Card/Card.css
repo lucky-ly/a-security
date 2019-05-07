@@ -11,13 +11,17 @@
     margin-right: 40px;
 }
 
+.card:last-child {
+    margin-bottom: 0;
+}
+
 @media screen and (min-width: 1440px) {
 
     .card:nth-child(odd) {
-        top: -326px;
+        margin-top: -326px;
     }
     
     .card:first-child {
-        top: 0;
+        margin-top: 0;
     }
 }
