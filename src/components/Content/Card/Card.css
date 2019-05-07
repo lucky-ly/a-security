@@ -4,13 +4,17 @@
     display: inline-block;
     box-sizing: border-box;
     margin-bottom: 40px;
+    flex-shrink: 0;
 }
 
-@media screen and (min-width: 1460px) {
+.card:nth-child(odd) {
+    margin-right: 40px;
+}
+
+@media screen and (min-width: 1440px) {
 
     .card:nth-child(odd) {
-        top: -286px;
-        margin-right: 40px;
+        top: -326px;
     }
     
     .card:first-child {
