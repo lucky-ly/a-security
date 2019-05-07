@@ -9,11 +9,17 @@ export interface IButtonProps {
     type?: string;
     color?: string;
     inline?: boolean;
+    width?:string;
 }
 
 export const Button = (props: IButtonProps) => {
-    const style = {
-        color: props.color ? props.color : "inherit",
+    const styles = {
+        container: {
+            width: props.width ? props.width : "auto",
+        },
+        text: {
+            color: props.color ? props.color : "inherit",
+        },
     };
 
     const classes = ["button"];
@@ -22,8 +28,8 @@ export const Button = (props: IButtonProps) => {
     if (props.inline) { classes.push(`button_inline`); }
     
     return (
-        <a className={classes.join(" ")} href={props.url}>
-            <span className="button__text" style={style}>{props.text}</span>
+        <a className={classes.join(" ")} href={props.url} style={styles.container}>
+            <span className="button__text" style={styles.text}>{props.text}</span>
             {props.children}
         </a>);
 };

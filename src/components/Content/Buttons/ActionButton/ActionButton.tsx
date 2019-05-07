@@ -17,13 +17,16 @@ export const ActionButton = (props: IProps) => {
         backfill: {
             backgroundColor,
         },
+        container: {
+            width: props.width ? props.width : "auto",
+        },
         text: {
             color: mainColor,
         }
     }
 
     return (
-        <a className="button button_type-action" href={props.url}>
+        <a className="button button_type-action" href={props.url} style={styles.container}>
             <span className="button__text" style={styles.text}>{props.text}</span>
             <i className="action-button__arrow">></i>
         </a>

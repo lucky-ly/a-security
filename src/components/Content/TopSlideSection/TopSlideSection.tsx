@@ -111,7 +111,7 @@ export class TopSlideSection extends React.Component<ITopSlideSectionProps, ITop
                         <h1 className="slide__title">{currentSlide.title}</h1>
                         <h2 className="slide__subtitle">{Helpers.formatSubtitle(currentSlide.subtitle)}</h2>
                         <div className="slide__buttons">
-                            <ActionButton url={currentSlide.actionUrl} text={currentSlide.actionText}/>
+                            <ActionButton url={currentSlide.actionUrl} text={currentSlide.actionText} width="256px"/>
                             <DetailsButton url={currentSlide.descriptionUrl} text={currentSlide.descriptionText}/>
                         </div>
                     </div>
