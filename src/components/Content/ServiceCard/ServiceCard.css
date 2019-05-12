@@ -22,10 +22,6 @@
     flex-direction: column-reverse;
 }
 
-/* dirty hack if used! */
-.service-card__content .button {
-}
-
 .service-card__number {
     font-size: 18px;
     font-weight: 700;
