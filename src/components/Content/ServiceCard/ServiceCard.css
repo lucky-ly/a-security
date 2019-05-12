@@ -5,6 +5,11 @@
     position: relative;
 }
 
+.service-card__background {
+    height: 100%;
+    opacity: .7;
+}
+
 .service-card__content {
     position: absolute;
     width: 100%;

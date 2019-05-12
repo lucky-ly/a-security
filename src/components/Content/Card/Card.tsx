@@ -7,8 +7,9 @@ export interface ICardProps extends IParent {
     className?: string;
 }
 
-export const Card = (props: ICardProps) => {
-    return (
-        <div className={`card ${props.className ? props.className : ""}`}>{ props.children }</div>
-    )
-}
+export const Card = React.forwardRef((props: ICardProps, ref?: React.Ref<HTMLDivElement>) => {
+        return (
+            <div className={`card ${props.className ? props.className : ""}`} ref={ref}>{ props.children }</div>
+        );
+    }
+);
